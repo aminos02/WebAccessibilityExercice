@@ -6,7 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screen Readers</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <style></style>
+    <style>
+      .black {
+        color: white;
+        background-color: black;
+      }
+      @media (prefers-color-scheme: dark) {
+        .main {
+          background-color: black;
+          color: white;
+        }
+      }
+    </style>
   </head>
   <body class="main">
     <header>
@@ -26,5 +37,12 @@
         <input id="input" type="checkbox" />
       </label>
     </div>
+    <script>
+      var c = document.getElementById("input");
+      c.addEventListener("change", function () {
+        if (this.checked) document.body.classList.add("black");
+        else document.body.classList.remove("black");
+      });
+    </script>
   </body>
 </html>

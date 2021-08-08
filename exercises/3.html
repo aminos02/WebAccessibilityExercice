@@ -25,15 +25,15 @@
       </p>
       <div>
         You have
-        <div id="counter">0</div>
+        <div id="counter" aria-live="assertive">0</div>
         likes on your website
       </div>
     </div>
     <script>
+      var counter = document.getElementById("counter");
       function makeTimeout() {
         var number = Math.floor(Math.random() * 10) + 1;
         setTimeout(() => {
-          var counter = document.getElementById("counter");
           counter.innerText = parseInt(counter.innerText, 10) + 1;
           makeTimeout();
         }, number + "00");
